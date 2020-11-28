@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.json('Hello, world!')
+    res.sendFile(__dirname + '/src/construction/index.html')
 })
 
 router.use((req, res) => {
     res.status(404)
     res.json({
-        error: "Noir ? Tu ne trouve pas ton coton dans le champs de ton maître ?"
+        error: "Page non trouvée !"
     })
 })
 
